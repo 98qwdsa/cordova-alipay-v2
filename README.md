@@ -5,10 +5,14 @@
 
    `1.git clone https://github.com/98qwdsa/cordova-alipay-v2`
 
-   `2.cordova plugin add 98qwdsa-alipay`
+   `2.cordova plugin add 98qwdsa-alipay/`
 
    `3.window.plugins.alipay.payV2(orderInfo, data => {
 		//success     
 	  }, error => {
 		//error
 	  })`
+## 相关链接： ##
+[http://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/index.html](http://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/index.html)
+
+[http://ngcordova.com/docs/plugins/](http://ngcordova.com/docs/plugins/)
