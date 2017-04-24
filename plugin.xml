@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+  <plugin id="cordova-98qwdsa-alipay" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>98qwdsa-alipay</name>
+    <js-module src="www/alipay.js" name="alipay">
+     <clobbers target="alipay" />
+    </js-module>
+    <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+        <feature name="alipay">
+          <param name="android-package" value="zcs.plugin.alipay.alipay"/>
+        </feature>
+      </config-file>
+       <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <!-- alipay sdk begin -->
+            <activity
+                android:name="com.alipay.sdk.auth.AuthActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:exported="false"
+                android:screenOrientation="behind">
+            </activity>
+            <activity
+                android:name="com.alipay.sdk.app.H5PayActivity"
+                android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+                android:exported="false"
+                android:screenOrientation="behind"
+                android:windowSoftInputMode="adjustResize|stateHidden" >
+            </activity>
+            <!-- alipay sdk end -->
+        </config-file>
+
+      <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      </config-file>
+
+      <source-file src="src/android/libs/alipaySdk-20161129.jar" target-dir="libs"/>
+      <!-- <source-file src="src/android/libs/alipaySingle-20161222.jar" target-dir="libs"/> -->
+      <!-- <source-file src="src/android/libs/android-support-v13.jar" target-dir="libs"/> -->
+
+     <!--  <source-file src="src/android/util/OrderInfoUtil2_0.java" target-dir="src/zcs/plugin/alipay/util"/> -->
+      <source-file src="src/android/alipay.java" target-dir="src/zcs/plugin/alipay" />
+      <!-- <source-file src="src/android/AuthResult.java" target-dir="src/zcs/plugin/alipay"/> -->
+      <!-- <source-file src="src/android/Base64.java" target-dir="src/zcs/plugin/alipay"/> -->
+      <!-- <source-file src="src/android/ExternalFragment.java" target-dir="src/zcs/plugin/alipay"/> -->
+      <!-- <source-file src="src/android/H5PayDemoActivity.java" target-dir="src/zcs/plugin/alipay"/> -->
+      <!-- <source-file src="src/android/PayDemoActivity.java" target-dir="src/zcs/plugin/alipay"/> -->
+      <source-file src="src/android/PayResult.java" target-dir="src/zcs/plugin/alipay"/>    
+      <!-- <source-file src="src/android/SignUtils.java" target-dir="src/zcs/plugin/alipay"/> -->
+    </platform>
+  </plugin>
